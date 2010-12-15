@@ -12,6 +12,11 @@ class RefineryBlogGenerator < Rails::Generators::NamedBase
 
     # migration file
     @refinerycms_blog_tables = [{
+       :table_name => 'blogs',
+       :attributes => [
+         Rails::Generators::GeneratedAttribute.new('title', 'string')
+       ], :id => true      
+    },{
        :table_name => 'blog_posts',
        :attributes => [
          Rails::Generators::GeneratedAttribute.new('title', 'string'),

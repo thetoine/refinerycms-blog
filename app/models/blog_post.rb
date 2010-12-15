@@ -1,5 +1,7 @@
 class BlogPost < ActiveRecord::Base
 
+  belongs_to :blog
+
   has_many :comments, :class_name => 'BlogComment'
   has_and_belongs_to_many :categories, :class_name => 'BlogCategory'
 
