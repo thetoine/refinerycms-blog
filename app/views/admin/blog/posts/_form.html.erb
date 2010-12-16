@@ -18,6 +18,14 @@
     <%= f.label :body -%>
     <%= f.text_area :body, :rows => 20, :class => 'wymeditor widest' -%>
   </div>
+  
+<%- if Blog.count > 0 -%>
+  <div class='field'>
+    <%= f.label :blog_id -%>
+    <%= f.select :blog_id, Blog.all.map { |b| [b.title, b.id] } -%>
+  </div>
+<%- end -%>
+
   <div id='more_options_field'>
     <p>
       <%= link_to t('.advanced_options'), "#",
